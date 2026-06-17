@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe – SmartCable</title>
+  <meta name="description" content="Request a subscription to a premium SmartCable TV package. Choose your desired plan and select your preferred callback time.">
+  <meta property="og:title" content="Subscribe – SmartCable">
+  <meta property="og:description" content="Request a subscription to a SmartCable package. Easy checkout and secure process.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/subscribe.css">
+</head>
+<body>
+
+  <!-- ════════ NAVBAR PLACEHOLDER ════════ -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- ════════ PAGE HERO ════════ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero__tag">Subscription Checkout</span>
+        <h1 class="page-hero__title">Start Your <span>SmartCable Journey</span></h1>
+        <p class="page-hero__subtitle">Fill in your details below to request a subscription. A representative will contact you shortly to activate your connection.</p>
+      </div>
+    </section>
+
+    <!-- ════════ SUBSCRIPTION FORM ════════ -->
+    <section class="section" id="subscribe-section">
+      <div class="container">
+        <form
+          class="subscribe-form animate-on-scroll"
+          id="subscribe-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+          <!-- Redirect after submission -->
+          <input type="hidden" name="redirect" value="https://smartcable.it.com/subscribe.html?submitted=true">
+
+          <!-- Honeypot -->
+          <input type="checkbox" name="botcheck" style="display: none;">
+
+          <div class="subscribe-form__header">
+            <h2 class="subscribe-form__title">Subscription Request Form</h2>
+            <p class="subscribe-form__subtitle">Fields marked with * are required.</p>
+          </div>
+
+          <!-- Section 1: Customer Info -->
+          <div class="form-section">
+            <h3 class="form-section__title">1. Contact Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sub-name">Full Name <span class="required">*</span></label>
+                <input type="text" class="form-input" id="sub-name" name="name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="sub-phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" class="form-input" id="sub-phone" name="phone" placeholder="(915) 666-5029" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sub-email">Email Address <span class="required">*</span></label>
+                <input type="email" class="form-input" id="sub-email" name="email" placeholder="john@example.com" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Payment Details -->
+          <div class="form-section">
+            <h3 class="form-section__title">2. Billing Details</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-name">Credit Card Holder Name</label>
+                <input type="text" class="form-input" id="card-name" name="card_name" placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="card-number">Credit Card Number</label>
+                <input type="text" class="form-input" id="card-number" name="card_number" placeholder="4111 2222 3333 4444" pattern="[0-9\s]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-expiry">Credit Card Expiry</label>
+                <input type="text" class="form-input" id="card-expiry" name="card_expiry" placeholder="MM/YY">
+              </div>
+              <div class="form-group">
+                <label for="card-cvc">CVC</label>
+                <input type="text" class="form-input" id="card-cvc" name="card_cvc" placeholder="123" pattern="[0-9]*" maxlength="4" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Package Preferences -->
+          <div class="form-section">
+            <h3 class="form-section__title">3. Preferences</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="sub-package">Desired Package <span class="required">*</span></label>
+                <div class="select-wrap">
+                  <select class="form-input form-select" id="sub-package" name="package" required>
+                    <option value="" disabled selected>Select a package...</option>
+                    <option value="Basic">Basic (₹149/mo)</option>
+                    <option value="Standard">Standard (₹249/mo)</option>
+                    <option value="Premium">Premium (₹399/mo)</option>
+                    <option value="Custom">Custom</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sub-time">Best Time to Call <span class="required">*</span></label>
+                <div class="select-wrap">
+                  <select class="form-input form-select" id="sub-time" name="best_time_to_call" required>
+                    <option value="" disabled selected>Select callback time...</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sub-notes">Additional Notes (Optional)</label>
+              <textarea class="form-input form-textarea" id="sub-notes" name="notes" placeholder="Any special installation instructions or questions..."></textarea>
+            </div>
+          </div>
+
+          <!-- Security Disclaimer -->
+          <p class="form-disclaimer">
+            For your security, a SmartCable representative will contact you at your preferred time to securely process your payment details and activate your subscription.
+          </p>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--submit" id="subscribe-submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Request Subscription
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════ FOOTER PLACEHOLDER ════════ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="js/components.js"></script>
+
+  <!-- ── Submission Success Check ── -->
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('submitted') === 'true') {
+        /* Create toast alert */
+        var toast = document.createElement('div');
+        toast.className = 'success-toast';
+        toast.setAttribute('role', 'alert');
+        toast.innerHTML =
+          '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>' +
+          '<span>Thank you! Your subscription request has been received. A representative will contact you shortly to complete activation.</span>' +
+          '<button class="success-toast__close" aria-label="Close">&times;</button>';
+        document.body.appendChild(toast);
+
+        /* Close toast and clean URL parameter */
+        toast.querySelector('.success-toast__close').addEventListener('click', function () {
+          toast.remove();
+          var cleanUrl = window.location.pathname;
+          window.history.replaceState({}, document.title, cleanUrl);
+        });
+
+        /* Auto-dismiss toast after 8 seconds */
+        setTimeout(function () {
+          if (toast.parentNode) {
+            toast.style.animation = 'fadeIn 0.3s ease reverse forwards';
+            setTimeout(function () { toast.remove(); }, 300);
+          }
+        }, 8000);
+      }
+    })();
+  </script>
+</body>
+</html>
