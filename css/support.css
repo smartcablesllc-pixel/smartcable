@@ -1,0 +1,290 @@
+/* ============================================================
+   SmartCable – Support Page Styles (css/support.css)
+   ============================================================ */
+
+/* ── FAQ Accordion ── */
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.faq__item:hover {
+  border-color: var(--color-gray-300);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq__question {
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-md);
+  color: var(--color-secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+.faq__question:hover {
+  background-color: var(--color-off-white);
+}
+
+.faq__chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--color-gray-400);
+  transition: transform var(--transition-base);
+}
+
+/* Open State */
+.faq__item--open {
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+.faq__item--open .faq__chevron {
+  transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base) ease-out;
+}
+
+.faq__answer-inner {
+  padding: 0 var(--space-lg) var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--color-gray-500);
+  line-height: var(--lh-relaxed);
+  border-top: 1px solid transparent;
+}
+
+.faq__answer-inner a {
+  color: var(--color-primary);
+  font-weight: var(--fw-semibold);
+}
+
+.faq__answer-inner a:hover {
+  text-decoration: underline;
+}
+
+
+/* ── Office details ── */
+.office-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .office-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .office-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.office-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.office-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gray-300);
+}
+
+.office-card__icon {
+  font-size: 2.2rem;
+  margin-bottom: var(--space-md);
+  background-color: var(--color-off-white);
+  width: 54px;
+  height: 54px;
+  border-radius: var(--border-radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.office-card__title {
+  font-size: var(--fs-md);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+  font-weight: var(--fw-bold);
+}
+
+.office-card__text {
+  font-size: var(--fs-sm);
+  color: var(--color-gray-500);
+  line-height: var(--lh-normal);
+}
+
+.office-card__text a {
+  color: var(--color-primary);
+  font-weight: var(--fw-semibold);
+}
+
+.office-card__text a:hover {
+  text-decoration: underline;
+}
+
+
+/* ── Contact Form ── */
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    padding: var(--space-2xl);
+  }
+}
+
+.contact-form__title {
+  font-size: var(--fs-xl);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-2xs);
+}
+
+.contact-form__subtitle {
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  margin-bottom: var(--space-xl);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    flex-direction: row;
+  }
+  .form-row .form-group {
+    flex: 1;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-md);
+}
+
+.form-group label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-gray-600);
+}
+
+.form-group label .required {
+  color: var(--color-primary);
+  margin-left: 2px;
+}
+
+.form-input {
+  padding: 0.85em var(--space-md);
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--border-radius-md);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.form-input::placeholder {
+  color: var(--color-gray-300);
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.08);
+}
+
+textarea.form-input {
+  min-height: 140px;
+  resize: vertical;
+}
+
+
+/* ── Success Toast ── */
+.success-toast {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  z-index: var(--z-toast);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 450px;
+  border-left: 4px solid var(--color-success);
+  animation: slideInRight var(--transition-base) forwards;
+}
+
+.success-toast svg {
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.success-toast span {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+}
+
+.success-toast__close {
+  background: none;
+  border: none;
+  color: var(--color-gray-300);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 var(--space-xs);
+  transition: color var(--transition-fast);
+  margin-left: auto;
+}
+
+.success-toast__close:hover {
+  color: var(--color-white);
+}

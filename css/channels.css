@@ -1,0 +1,155 @@
+/* ============================================================
+   SmartCable – Channels Page Styles (css/channels.css)
+   ============================================================ */
+
+/* ── Search Bar ── */
+.search-bar {
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar__icon {
+  position: absolute;
+  left: var(--space-md);
+  color: var(--color-gray-400);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.search-bar__input {
+  width: 100%;
+  padding: var(--space-md) var(--space-md) var(--space-md) var(--space-2xl);
+  font-family: var(--font-primary);
+  font-size: var(--fs-sm);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--border-radius-full);
+  outline: none;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-bar__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.1);
+}
+
+/* ── Filter Bar ── */
+.filter-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xl);
+  overflow-x: auto;
+  padding-bottom: var(--space-xs);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .filter-bar {
+    justify-content: center;
+  }
+}
+
+.filter-tab {
+  background-color: var(--color-off-white);
+  border: 1px solid var(--color-gray-200);
+  color: var(--color-gray-600);
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--border-radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-secondary);
+}
+
+.filter-tab--active {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Channel Grid ── */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.channel-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.channel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gray-200);
+  background-color: rgba(29, 53, 87, 0.01);
+}
+
+.channel-card__icon {
+  font-size: 1.8rem;
+  background-color: var(--color-off-white);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-card__info {
+  flex-grow: 1;
+  min-width: 0; /* truncate text safely */
+}
+
+.channel-card__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.channel-card__genre {
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  margin-top: 2px;
+}
+
+.channel-card__badges {
+  flex-shrink: 0;
+}
+
+.channel-card__badges .badge {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+}

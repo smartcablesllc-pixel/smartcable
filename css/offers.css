@@ -1,0 +1,252 @@
+/* ============================================================
+   SmartCable – Offers Page Styles (css/offers.css)
+   ============================================================ */
+
+/* ── Promotional Banners ── */
+.promo-banner {
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  margin-bottom: var(--space-xl);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.promo-banner:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.promo-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Promo Banner Modifiers */
+.promo-banner--orange {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.promo-banner--purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.promo-banner--teal {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+}
+
+.promo-banner__content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.promo-banner__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-extrabold);
+  margin-bottom: var(--space-xs);
+}
+
+.promo-banner__desc {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-lg);
+}
+
+.promo-banner .btn {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.promo-banner .btn:hover {
+  background-color: var(--color-off-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Filter Bar ── */
+.filter-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xl);
+  overflow-x: auto;
+  padding-bottom: var(--space-xs);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .filter-bar {
+    justify-content: center;
+  }
+}
+
+.filter-tab {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  color: var(--color-gray-600);
+  padding: var(--space-xs) var(--space-lg);
+  border-radius: var(--border-radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  background-color: var(--color-off-white);
+  color: var(--color-secondary);
+}
+
+.filter-tab--active {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* ── Offer Grid ── */
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .offer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.offer-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gray-300);
+}
+
+.offer-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.offer-card__icon {
+  font-size: 2rem;
+  background-color: var(--color-off-white);
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer-card__title {
+  font-size: var(--fs-md);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+  font-weight: var(--fw-bold);
+}
+
+.offer-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--color-gray-500);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.offer-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-gray-100);
+  padding-top: var(--space-md);
+  margin-top: auto;
+}
+
+.offer-card__price {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-primary);
+}
+
+.offer-card__price-old {
+  font-size: var(--fs-xs);
+  color: var(--color-gray-400);
+  text-decoration: line-through;
+  margin-left: var(--space-2xs);
+}
+
+/* Validity Badges */
+.validity-badge {
+  font-size: 0.7rem;
+  font-weight: var(--fw-bold);
+  padding: 4px var(--space-sm);
+  border-radius: var(--border-radius-full);
+}
+
+.validity-badge--active {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+}
+
+.validity-badge--limited {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+}
+
+/* Discount Ribbon */
+.discount-ribbon {
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: var(--gradient-cta);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: var(--fw-bold);
+  padding: 4px 30px;
+  transform: rotate(45deg);
+  box-shadow: var(--shadow-sm);
+  text-transform: uppercase;
+}
