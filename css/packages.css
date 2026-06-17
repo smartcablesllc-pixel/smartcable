@@ -254,11 +254,17 @@
 
 .comparison-table .check {
   color: var(--color-success);
-  font-weight: var(--fw-bold);
-  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 .comparison-table .cross {
   color: var(--color-gray-400);
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
+
