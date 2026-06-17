@@ -116,10 +116,13 @@
                 <div class="select-wrap">
                   <select class="form-input form-select" id="sub-package" name="package" required>
                     <option value="" disabled selected>Select a package...</option>
-                    <option value="Basic">Basic (₹149/mo)</option>
-                    <option value="Standard">Standard (₹249/mo)</option>
-                    <option value="Premium">Premium (₹399/mo)</option>
-                    <option value="Custom">Custom</option>
+                    <option value="Starter">Starter Pack (₹149/mo)</option>
+                    <option value="Entertainment">Entertainment Pack (₹249/mo)</option>
+                    <option value="Premium">Premium Pack (₹399/mo)</option>
+                    <option value="Sports">Sports Fanatic (₹349/mo)</option>
+                    <option value="Family">Family Pack (₹499/mo)</option>
+                    <option value="Ultimate">Ultimate Pack (₹699/mo)</option>
+                    <option value="Custom">Custom / Other</option>
                   </select>
                 </div>
               </div>
@@ -172,6 +175,24 @@
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
+
+      // Auto-select package from URL parameter
+      var pkg = params.get('package');
+      if (pkg) {
+        var selectEl = document.getElementById('sub-package');
+        if (selectEl) {
+          var pkgLower = pkg.toLowerCase();
+          for (var i = 0; i < selectEl.options.length; i++) {
+            var optVal = selectEl.options[i].value.toLowerCase();
+            var optText = selectEl.options[i].text.toLowerCase();
+            if (optVal === pkgLower || optText.indexOf(pkgLower) !== -1) {
+              selectEl.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+
       if (params.get('submitted') === 'true') {
         /* Create toast alert */
         var toast = document.createElement('div');
