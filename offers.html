@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offers &amp; Deals – SmartCable</title>
+  <meta name="description" content="Grab the best SmartCable offers, seasonal discounts, and limited-time deals. Save big on HD packages, OTT bundles, and new connections.">
+  <meta property="og:title" content="Offers & Deals – SmartCable">
+  <meta property="og:description" content="Exclusive deals and seasonal promotions on SmartCable plans.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- ════════ PAGE HERO ════════ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero__tag">Special Deals</span>
+        <h1 class="page-hero__title">Exclusive <span>Offers</span> for You</h1>
+        <p class="page-hero__subtitle">Limited-time promotions, seasonal discounts, and bundle deals. Don't miss out!</p>
+      </div>
+    </section>
+
+    <!-- ════════ PROMOTIONAL BANNERS ════════ -->
+    <section class="section" id="promos">
+      <div class="container">
+
+        <!-- Promo Banner 1 -->
+        <div class="promo-banner promo-banner--orange animate-on-scroll" id="promo-summer">
+          <div class="promo-banner__content">
+            <h2 class="promo-banner__title">🔥 Summer Mega Sale</h2>
+            <p class="promo-banner__desc">Get 3 months FREE when you subscribe to any annual plan. Offer valid until July 31, 2026.</p>
+            <a href="packages.html" class="btn btn--dark btn--lg" id="promo-summer-cta">Claim Offer</a>
+          </div>
+        </div>
+
+        <!-- Promo Banner 2 -->
+        <div class="promo-banner promo-banner--purple animate-on-scroll" id="promo-ott">
+          <div class="promo-banner__content">
+            <h2 class="promo-banner__title">🎬 OTT Super Bundle</h2>
+            <p class="promo-banner__desc">Netflix + Prime + Disney+ at just ₹199/month extra with any Premium or Ultimate plan. Stream everywhere!</p>
+            <a href="packages.html" class="btn btn--dark btn--lg" id="promo-ott-cta">Get Bundle</a>
+          </div>
+        </div>
+
+        <!-- Promo Banner 3 -->
+        <div class="promo-banner promo-banner--teal animate-on-scroll" id="promo-referral">
+          <div class="promo-banner__content">
+            <h2 class="promo-banner__title">🎁 Refer &amp; Earn ₹500</h2>
+            <p class="promo-banner__desc">Refer a friend to SmartCable and both of you get ₹500 recharge credit. Unlimited referrals!</p>
+            <a href="support.html" class="btn btn--dark btn--lg" id="promo-referral-cta">Start Referring</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════ DISCOUNT CARDS ════════ -->
+    <section class="section section--light" id="deals">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__tag">Current Deals</span>
+          <h2 class="section__title">Save More, Watch More</h2>
+          <p class="section__subtitle">Active offers you can grab right now. Check validity and don't miss out!</p>
+        </div>
+
+        <!-- Filter -->
+        <div class="filter-bar animate-on-scroll" data-filter-group="offers-grid">
+          <button class="filter-tab filter-tab--active" data-filter="all" id="offer-filter-all">All Offers</button>
+          <button class="filter-tab" data-filter="new-connection" id="offer-filter-new">New Connection</button>
+          <button class="filter-tab" data-filter="upgrade" id="offer-filter-upgrade">Upgrades</button>
+          <button class="filter-tab" data-filter="recharge" id="offer-filter-recharge">Recharge</button>
+          <button class="filter-tab" data-filter="festive" id="offer-filter-festive">Festive</button>
+        </div>
+
+        <div class="offer-grid" id="offers-grid">
+
+          <!-- Offer 1 -->
+          <div class="offer-card animate-on-scroll" data-category="new-connection" id="offer-new-free-install">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">🔧</div>
+              <span class="validity-badge validity-badge--active">● Active</span>
+            </div>
+            <h3 class="offer-card__title">Free Installation</h3>
+            <p class="offer-card__desc">Get a brand new SmartCable connection with completely free installation on any plan above ₹249/month.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">₹0</span>
+                <span class="offer-card__price-old">₹999</span>
+              </div>
+              <span class="validity-badge validity-badge--active">Valid till Aug 2026</span>
+            </div>
+          </div>
+
+          <!-- Offer 2 -->
+          <div class="offer-card animate-on-scroll" data-category="upgrade" id="offer-upgrade-hd">
+            <div class="discount-ribbon">50% OFF</div>
+            <div class="offer-card__header">
+              <div class="offer-card__icon">📺</div>
+              <span class="validity-badge validity-badge--limited">⏳ Limited</span>
+            </div>
+            <h3 class="offer-card__title">HD Upgrade at Half Price</h3>
+            <p class="offer-card__desc">Upgrade from SD to HD set top box at just ₹499 instead of ₹999. Crystal-clear picture quality awaits.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">₹499</span>
+                <span class="offer-card__price-old">₹999</span>
+              </div>
+              <span class="validity-badge validity-badge--limited">Ends 30 Jun 2026</span>
+            </div>
+          </div>
+
+          <!-- Offer 3 -->
+          <div class="offer-card animate-on-scroll" data-category="recharge" id="offer-recharge-cashback">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">💰</div>
+              <span class="validity-badge validity-badge--active">● Active</span>
+            </div>
+            <h3 class="offer-card__title">20% Cashback on Recharge</h3>
+            <p class="offer-card__desc">Recharge via the SmartCable app and get 20% cashback up to ₹100 on your first transaction every month.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">20% Back</span>
+              </div>
+              <span class="validity-badge validity-badge--active">Ongoing</span>
+            </div>
+          </div>
+
+          <!-- Offer 4 -->
+          <div class="offer-card animate-on-scroll" data-category="festive" id="offer-festive-diwali">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">🪔</div>
+              <span class="validity-badge validity-badge--limited">⏳ Upcoming</span>
+            </div>
+            <h3 class="offer-card__title">Festival Bonanza Pack</h3>
+            <p class="offer-card__desc">Subscribe to the Premium Pack during the festival season and get 2 months extra absolutely free!</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">₹399</span>
+                <span class="offer-card__price-old">₹599</span>
+              </div>
+              <span class="validity-badge validity-badge--limited">Oct–Nov 2026</span>
+            </div>
+          </div>
+
+          <!-- Offer 5 -->
+          <div class="offer-card animate-on-scroll" data-category="new-connection" id="offer-new-stb">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">📦</div>
+              <span class="validity-badge validity-badge--active">● Active</span>
+            </div>
+            <h3 class="offer-card__title">Smart STB at ₹999</h3>
+            <p class="offer-card__desc">Get the 4K Smart Set Top Box with voice remote for just ₹999 when you subscribe to a 6-month plan.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">₹999</span>
+                <span class="offer-card__price-old">₹2,499</span>
+              </div>
+              <span class="validity-badge validity-badge--active">Valid till Sep 2026</span>
+            </div>
+          </div>
+
+          <!-- Offer 6 -->
+          <div class="offer-card animate-on-scroll" data-category="upgrade" id="offer-upgrade-4k">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">🏆</div>
+              <span class="validity-badge validity-badge--active">● Active</span>
+            </div>
+            <h3 class="offer-card__title">Free 4K Upgrade</h3>
+            <p class="offer-card__desc">Existing Premium or Ultimate subscribers can upgrade to the 4K Dolby Atmos box at no extra charge.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">Free</span>
+                <span class="offer-card__price-old">₹1,499</span>
+              </div>
+              <span class="validity-badge validity-badge--active">Ongoing</span>
+            </div>
+          </div>
+
+          <!-- Offer 7 -->
+          <div class="offer-card animate-on-scroll" data-category="recharge" id="offer-annual-save">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">📅</div>
+              <span class="validity-badge validity-badge--active">● Active</span>
+            </div>
+            <h3 class="offer-card__title">Annual Plan: Save 25%</h3>
+            <p class="offer-card__desc">Switch to an annual plan on any pack and save 25% compared to monthly billing. Cancel anytime.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">25% Off</span>
+              </div>
+              <span class="validity-badge validity-badge--active">Ongoing</span>
+            </div>
+          </div>
+
+          <!-- Offer 8 -->
+          <div class="offer-card animate-on-scroll" data-category="festive" id="offer-independence">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">🇮🇳</div>
+              <span class="validity-badge validity-badge--limited">⏳ Upcoming</span>
+            </div>
+            <h3 class="offer-card__title">Independence Day Special</h3>
+            <p class="offer-card__desc">Flat ₹150 off on all plans! Celebrate with unlimited entertainment. Use code: FREEDOM150.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">₹150 Off</span>
+              </div>
+              <span class="validity-badge validity-badge--limited">Aug 10–20, 2026</span>
+            </div>
+          </div>
+
+          <!-- Offer 9 -->
+          <div class="offer-card animate-on-scroll" data-category="recharge" id="offer-upi">
+            <div class="offer-card__header">
+              <div class="offer-card__icon">📱</div>
+              <span class="validity-badge validity-badge--active">● Active</span>
+            </div>
+            <h3 class="offer-card__title">UPI Recharge Bonus</h3>
+            <p class="offer-card__desc">Pay via UPI and get ₹50 extra talktime credit added to your SmartCable account instantly.</p>
+            <div class="offer-card__footer">
+              <div>
+                <span class="offer-card__price">₹50 Extra</span>
+              </div>
+              <span class="validity-badge validity-badge--active">Ongoing</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ CTA ════════ -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2 class="cta-banner__title animate-on-scroll">Have Questions About an Offer?</h2>
+        <p class="cta-banner__desc animate-on-scroll">Our team is ready to help you pick the best deal. Reach out anytime!</p>
+        <div class="cta-banner__actions animate-on-scroll">
+          <a href="support.html" class="btn btn--dark btn--lg" id="offers-cta-support">Contact Support</a>
+          <a href="packages.html" class="btn btn--secondary btn--lg" id="offers-cta-plans">View All Plans</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/components.js"></script>
+</body>
+</html>

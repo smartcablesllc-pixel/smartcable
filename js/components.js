@@ -1,6 +1,9 @@
 /**
  * SmartCable – Component Loader & Interactive Scripts
- * Loads navbar.html and footer.html into placeholders
+ * ─────────────────────────────────────────────────────
+ * • Loads /components/navbar.html  → #navbar-placeholder
+ * • Loads /components/footer.html  → #footer-placeholder
+ * • Initialises navbar scroll, hamburger, active-link, scroll animations
  */
 
 (function () {
@@ -8,17 +11,18 @@
 
   /* ── Component Loader ── */
   async function loadComponent(id, path) {
-    const el = document.getElementById(id);
+    var el = document.getElementById(id);
     if (!el) return;
     try {
-      const res = await fetch(path);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      var res = await fetch(path);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       el.innerHTML = await res.text();
     } catch (err) {
-      console.warn(`[SmartCable] Could not load ${path}:`, err);
+      console.warn('[SmartCable] Could not load ' + path + ':', err);
     }
   }
 
+  /* ── Bootstrap ── */
   async function init() {
     await Promise.all([
       loadComponent('navbar-placeholder', 'components/navbar.html'),
@@ -29,27 +33,44 @@
     initScrollAnimations();
     initSmoothScroll();
     initChannelMarquee();
+    initFaqAccordion();
+    initFilterTabs();
+    initChannelSearch();
+    initComparisonToggle();
   }
 
-  /* ── Navbar Logic ── */
+  /* ══════════════════════════════════════════════
+     NAVBAR
+     ══════════════════════════════════════════════ */
   function initNavbar() {
-    const navbar = document.getElementById('main-navbar');
-    const toggle = document.getElementById('navbar-toggle');
-    const mobile = document.getElementById('navbar-mobile');
+    var navbar = document.getElementById('main-navbar');
+    var toggle = document.getElementById('navbar-toggle');
+    var mobile = document.getElementById('navbar-mobile');
 
     if (!navbar) return;
 
-    // Scroll handler – add solid background on scroll
-    let ticking = false;
+    /* ── Determine if we are on a page with a hero (index) ── */
+    var hasHero = !!document.querySelector('.hero');
+
+    /* On interior pages (no hero), start navbar solid immediately */
+    if (!hasHero) {
+      navbar.classList.add('navbar--scrolled');
+      navbar.classList.remove('navbar--transparent');
+    }
+
+    /* ── Scroll handler ── */
+    var ticking = false;
     function onScroll() {
       if (!ticking) {
         requestAnimationFrame(function () {
-          if (window.scrollY > 60) {
-            navbar.classList.add('navbar--scrolled');
-            navbar.classList.remove('navbar--transparent');
-          } else {
-            navbar.classList.remove('navbar--scrolled');
-            navbar.classList.add('navbar--transparent');
+          if (hasHero) {
+            if (window.scrollY > 60) {
+              navbar.classList.add('navbar--scrolled');
+              navbar.classList.remove('navbar--transparent');
+            } else {
+              navbar.classList.remove('navbar--scrolled');
+              navbar.classList.add('navbar--transparent');
+            }
           }
           ticking = false;
         });
@@ -57,18 +78,17 @@
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // fire on load
+    onScroll();
 
-    // Hamburger toggle
+    /* ── Hamburger toggle ── */
     if (toggle && mobile) {
       toggle.addEventListener('click', function () {
-        const isOpen = mobile.classList.toggle('open');
+        var isOpen = mobile.classList.toggle('open');
         toggle.classList.toggle('active', isOpen);
         toggle.setAttribute('aria-expanded', String(isOpen));
         document.body.style.overflow = isOpen ? 'hidden' : '';
       });
 
-      // Close mobile nav when a link is clicked
       mobile.querySelectorAll('.navbar__mobile-link').forEach(function (link) {
         link.addEventListener('click', function () {
           mobile.classList.remove('open');
@@ -79,29 +99,52 @@
       });
     }
 
-    // Active link highlighting based on scroll position
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.navbar__link');
-    function updateActiveLink() {
-      const scrollY = window.scrollY + 120;
-      sections.forEach(function (section) {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.getAttribute('id');
-        if (scrollY >= top && scrollY < top + height) {
-          navLinks.forEach(function (link) {
-            link.classList.remove('navbar__link--active');
-            if (link.getAttribute('href') === '#' + id) {
-              link.classList.add('navbar__link--active');
-            }
-          });
-        }
-      });
+    /* ── Active link based on current page ── */
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    var navLinks = document.querySelectorAll('.navbar__link');
+    navLinks.forEach(function (link) {
+      link.classList.remove('navbar__link--active');
+      var href = link.getAttribute('href') || '';
+      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        link.classList.add('navbar__link--active');
+      }
+    });
+
+    /* Also for mobile links */
+    var mobileLinks = document.querySelectorAll('.navbar__mobile-link');
+    mobileLinks.forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        link.style.color = 'var(--color-primary)';
+      }
+    });
+
+    /* ── Scroll-based active (only on index.html with section anchors) ── */
+    if (hasHero) {
+      var sections = document.querySelectorAll('section[id]');
+      function updateActiveLink() {
+        var scrollY = window.scrollY + 120;
+        sections.forEach(function (section) {
+          var top = section.offsetTop;
+          var height = section.offsetHeight;
+          var id = section.getAttribute('id');
+          if (scrollY >= top && scrollY < top + height) {
+            navLinks.forEach(function (link) {
+              link.classList.remove('navbar__link--active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('navbar__link--active');
+              }
+            });
+          }
+        });
+      }
+      window.addEventListener('scroll', updateActiveLink, { passive: true });
     }
-    window.addEventListener('scroll', updateActiveLink, { passive: true });
   }
 
-  /* ── Scroll Animations ── */
+  /* ══════════════════════════════════════════════
+     SCROLL ANIMATIONS (IntersectionObserver)
+     ══════════════════════════════════════════════ */
   function initScrollAnimations() {
     var observer = new IntersectionObserver(
       function (entries) {
@@ -120,7 +163,9 @@
     });
   }
 
-  /* ── Smooth Scroll for Anchor Links ── */
+  /* ══════════════════════════════════════════════
+     SMOOTH SCROLL (anchor links)
+     ══════════════════════════════════════════════ */
   function initSmoothScroll() {
     document.addEventListener('click', function (e) {
       var link = e.target.closest('a[href^="#"]');
@@ -137,22 +182,126 @@
     });
   }
 
-  /* ── Channel Marquee Duplication ── */
+  /* ══════════════════════════════════════════════
+     CHANNEL MARQUEE (duplicate children)
+     ══════════════════════════════════════════════ */
   function initChannelMarquee() {
     var marquee = document.querySelector('.channels__marquee');
     if (!marquee) return;
-    // Duplicate children for seamless loop
     var children = Array.from(marquee.children);
     children.forEach(function (child) {
-      var clone = child.cloneNode(true);
-      marquee.appendChild(clone);
+      marquee.appendChild(child.cloneNode(true));
     });
   }
 
-  /* ── Counter Animation ── */
+  /* ══════════════════════════════════════════════
+     FAQ ACCORDION (support.html)
+     ══════════════════════════════════════════════ */
+  function initFaqAccordion() {
+    var items = document.querySelectorAll('.faq__item');
+    if (!items.length) return;
+
+    items.forEach(function (item) {
+      var header = item.querySelector('.faq__question');
+      if (!header) return;
+      header.addEventListener('click', function () {
+        var isOpen = item.classList.contains('faq__item--open');
+
+        /* close all */
+        items.forEach(function (i) {
+          i.classList.remove('faq__item--open');
+          var ans = i.querySelector('.faq__answer');
+          if (ans) ans.style.maxHeight = null;
+        });
+
+        /* toggle current */
+        if (!isOpen) {
+          item.classList.add('faq__item--open');
+          var answer = item.querySelector('.faq__answer');
+          if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     FILTER TABS (packages / channels / offers)
+     ══════════════════════════════════════════════ */
+  function initFilterTabs() {
+    var tabGroups = document.querySelectorAll('[data-filter-group]');
+    tabGroups.forEach(function (group) {
+      var tabs = group.querySelectorAll('[data-filter]');
+      var targetId = group.dataset.filterGroup;
+      var container = document.getElementById(targetId);
+      if (!container) return;
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          /* Activate tab */
+          tabs.forEach(function (t) { t.classList.remove('filter-tab--active'); });
+          tab.classList.add('filter-tab--active');
+
+          var filterVal = tab.dataset.filter;
+          var items = container.querySelectorAll('[data-category]');
+          items.forEach(function (item) {
+            if (filterVal === 'all' || item.dataset.category === filterVal) {
+              item.style.display = '';
+              item.style.animation = 'fadeInUp 0.4s ease both';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     CHANNEL SEARCH (channels.html)
+     ══════════════════════════════════════════════ */
+  function initChannelSearch() {
+    var searchInput = document.getElementById('channel-search');
+    if (!searchInput) return;
+    var grid = document.getElementById('channel-grid');
+    if (!grid) return;
+
+    searchInput.addEventListener('input', function () {
+      var query = searchInput.value.toLowerCase().trim();
+      var items = grid.querySelectorAll('[data-channel-name]');
+      items.forEach(function (item) {
+        var name = (item.dataset.channelName || '').toLowerCase();
+        if (!query || name.indexOf(query) !== -1) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     COMPARISON TABLE TOGGLE (packages.html)
+     ══════════════════════════════════════════════ */
+  function initComparisonToggle() {
+    var btn = document.getElementById('toggle-comparison');
+    var table = document.getElementById('comparison-section');
+    if (!btn || !table) return;
+    btn.addEventListener('click', function () {
+      var hidden = table.style.display === 'none';
+      table.style.display = hidden ? 'block' : 'none';
+      btn.textContent = hidden ? 'Hide Comparison' : 'Compare All Plans';
+      if (hidden) {
+        table.style.animation = 'fadeInUp 0.5s ease both';
+        table.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     COUNTER ANIMATION (exported global)
+     ══════════════════════════════════════════════ */
   window.animateCounter = function (el, target, duration) {
     duration = duration || 2000;
-    var start = 0;
     var startTime = null;
     function step(timestamp) {
       if (!startTime) startTime = timestamp;
@@ -168,7 +317,7 @@
     requestAnimationFrame(step);
   };
 
-  // Fire
+  /* ── Fire ── */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
