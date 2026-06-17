@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscribe – SmartCable</title>
-  <meta name="description" content="Request a subscription to a premium SmartCable TV package. Choose your desired plan and select your preferred callback time.">
+  <meta name="description"
+    content="Request a subscription to a premium SmartCable TV package. Choose your desired plan and select your preferred callback time.">
   <meta property="og:title" content="Subscribe – SmartCable">
-  <meta property="og:description" content="Request a subscription to a SmartCable package. Easy checkout and secure process.">
+  <meta property="og:description"
+    content="Request a subscription to a SmartCable package. Easy checkout and secure process.">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/subscribe.css">
 </head>
+
 <body>
 
   <!-- ════════ NAVBAR PLACEHOLDER ════════ -->
@@ -28,19 +34,16 @@
       <div class="container">
         <span class="page-hero__tag">Subscription Checkout</span>
         <h1 class="page-hero__title">Start Your <span>SmartCable Journey</span></h1>
-        <p class="page-hero__subtitle">Fill in your details below to request a subscription. A representative will contact you shortly to activate your connection.</p>
+        <p class="page-hero__subtitle">Fill in your details below to request a subscription. A representative will
+          contact you shortly to activate your connection.</p>
       </div>
     </section>
 
     <!-- ════════ SUBSCRIPTION FORM ════════ -->
     <section class="section" id="subscribe-section">
       <div class="container">
-        <form
-          class="subscribe-form animate-on-scroll"
-          id="subscribe-form"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-        >
+        <form class="subscribe-form animate-on-scroll" id="subscribe-form" action="https://api.web3forms.com/submit"
+          method="POST">
           <!-- Web3Forms Access Key -->
           <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
 
@@ -48,7 +51,7 @@
           <input type="hidden" name="redirect" value="https://smartcable.it.com/subscribe.html?submitted=true">
 
           <!-- Honeypot -->
-          <input type="checkbox" name="botcheck" style="display: none;">
+          <input type="checkbox" name="botcheck" style="display:none">
 
           <div class="subscribe-form__header">
             <h2 class="subscribe-form__title">Subscription Request Form</h2>
@@ -71,7 +74,8 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="sub-email">Email Address <span class="required">*</span></label>
-                <input type="email" class="form-input" id="sub-email" name="email" placeholder="john@example.com" required>
+                <input type="email" class="form-input" id="sub-email" name="email" placeholder="john@example.com"
+                  required>
               </div>
             </div>
           </div>
@@ -86,7 +90,8 @@
               </div>
               <div class="form-group">
                 <label for="card-number">Credit Card Number</label>
-                <input type="text" class="form-input" id="card-number" name="card_number" placeholder="4111 2222 3333 4444" pattern="[0-9\s]*" inputmode="numeric">
+                <input type="text" class="form-input" id="card-number" name="card_number"
+                  placeholder="4111 2222 3333 4444" pattern="[0-9\s]*" inputmode="numeric">
               </div>
             </div>
             <div class="form-row">
@@ -96,7 +101,8 @@
               </div>
               <div class="form-group">
                 <label for="card-cvc">CVC</label>
-                <input type="text" class="form-input" id="card-cvc" name="card_cvc" placeholder="123" pattern="[0-9]*" maxlength="4" inputmode="numeric">
+                <input type="text" class="form-input" id="card-cvc" name="card_cvc" placeholder="123" pattern="[0-9]*"
+                  maxlength="4" inputmode="numeric">
               </div>
             </div>
           </div>
@@ -131,17 +137,23 @@
             </div>
             <div class="form-group">
               <label for="sub-notes">Additional Notes (Optional)</label>
-              <textarea class="form-input form-textarea" id="sub-notes" name="notes" placeholder="Any special installation instructions or questions..."></textarea>
+              <textarea class="form-input form-textarea" id="sub-notes" name="notes"
+                placeholder="Any special installation instructions or questions..."></textarea>
             </div>
           </div>
 
           <!-- Security Disclaimer -->
           <p class="form-disclaimer">
-            For your security, a SmartCable representative will contact you at your preferred time to securely process your payment details and activate your subscription.
+            For your security, a SmartCable representative will contact you at your preferred time to securely process
+            your payment details and activate your subscription.
           </p>
 
           <button type="submit" class="btn btn--primary btn--lg btn--submit" id="subscribe-submit">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
             Request Subscription
           </button>
         </form>
@@ -189,4 +201,5 @@
     })();
   </script>
 </body>
+
 </html>
