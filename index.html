@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCable – Premium Cable TV &amp; Entertainment</title>
+  <meta name="description" content="SmartCable – your smart choice for premium cable TV. Enjoy HD channels, flexible plans, and seamless entertainment for the whole family.">
+  <meta property="og:title" content="SmartCable – Premium Cable TV & Entertainment">
+  <meta property="og:description" content="SmartCable – your smart choice for premium cable TV. Enjoy HD channels, flexible plans, and seamless entertainment.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+
+  <!-- ════════════ NAVBAR PLACEHOLDER ════════════ -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- ════════════ HERO BANNER ════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <img class="hero__bg-mobile" src="images/hero-banner-mobile.png" alt="" width="750" height="900">
+        <img class="hero__bg-desktop" src="images/hero-banner.png" alt="" width="1920" height="800">
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          India's Smartest Cable Experience
+        </div>
+
+        <h1 class="hero__title">
+          Entertainment<br>Redefined with <span>SmartCable</span>
+        </h1>
+
+        <p class="hero__description">
+          Crystal-clear HD channels, smart features, and flexible plans designed for every household. Switch to SmartCable and experience the future of television.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#packs" class="btn btn--primary btn--lg" id="hero-cta-explore">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+            Explore Plans
+          </a>
+          <a href="#features" class="btn btn--secondary btn--lg" id="hero-cta-learn">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <div class="hero__stat-value">500+</div>
+            <div class="hero__stat-label">HD Channels</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-value">10M+</div>
+            <div class="hero__stat-label">Happy Customers</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-value">99.9%</div>
+            <div class="hero__stat-label">Uptime</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <div class="hero__scroll-icon"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+
+    <!-- ════════════ RECHARGE BAR ════════════ -->
+    <section id="recharge">
+      <div class="container recharge-bar">
+        <div class="recharge-bar__inner animate-on-scroll">
+          <div class="recharge-bar__label">Instant <span>Recharge</span></div>
+          <div class="recharge-bar__input-wrap">
+            <span class="recharge-bar__input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </span>
+            <input type="text" class="recharge-bar__input" id="recharge-input" placeholder="Enter Mobile No. or Subscriber ID" aria-label="Enter Mobile Number or Subscriber ID">
+          </div>
+          <button class="btn btn--primary" id="recharge-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            Proceed
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════ FEATURED PACKS ════════════ -->
+    <section class="packs section" id="packs">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__tag">Our Plans</span>
+          <h2 class="section__title">Choose Your Perfect Pack</h2>
+          <p class="section__subtitle">Flexible plans starting at just ₹149/month. Pick what suits your family best.</p>
+        </div>
+
+        <div class="packs__grid">
+          <!-- Pack 1 -->
+          <div class="pack-card animate-on-scroll" id="pack-starter">
+            <div class="pack-card__icon">📺</div>
+            <h3 class="pack-card__name">Starter Pack</h3>
+            <p class="pack-card__channels">120+ Channels including 30 HD</p>
+            <div class="pack-card__price">₹149 <span>/month</span></div>
+            <p class="pack-card__duration">30 days validity</p>
+            <div class="pack-card__features">
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>Free-to-Air + Popular Channels</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>7-Day Catch-Up TV</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>HD Set Top Box Included</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>24/7 Customer Support</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn--outline" id="pack-starter-cta">Select Plan</a>
+          </div>
+
+          <!-- Pack 2 – Featured -->
+          <div class="pack-card pack-card--featured animate-on-scroll" id="pack-premium">
+            <span class="badge badge--popular pack-card__badge">Most Popular</span>
+            <div class="pack-card__icon">🎬</div>
+            <h3 class="pack-card__name">Premium Pack</h3>
+            <p class="pack-card__channels">300+ Channels including 80 HD</p>
+            <div class="pack-card__price">₹399 <span>/month</span></div>
+            <p class="pack-card__duration">30 days validity</p>
+            <div class="pack-card__features">
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>All Starter + Premium Channels</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>OTT Apps: Netflix, Prime, Disney+</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>4K Smart Set Top Box</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>Voice Remote &amp; Smart Guide</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>Free Installation</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn--primary" id="pack-premium-cta">Select Plan</a>
+          </div>
+
+          <!-- Pack 3 -->
+          <div class="pack-card animate-on-scroll" id="pack-ultimate">
+            <span class="badge badge--new pack-card__badge">New</span>
+            <div class="pack-card__icon">🏆</div>
+            <h3 class="pack-card__name">Ultimate Pack</h3>
+            <p class="pack-card__channels">500+ Channels including 150 HD</p>
+            <div class="pack-card__price">₹699 <span>/month</span></div>
+            <p class="pack-card__duration">30 days validity</p>
+            <div class="pack-card__features">
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>All Premium + Sports &amp; Movies</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>All OTT Apps Included</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>4K Dolby Atmos Set Top Box</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>Multi-Room (Up to 3 TVs)</span>
+              </div>
+              <div class="pack-card__feature">
+                <span class="pack-card__feature-icon">✓</span>
+                <span>Priority Support &amp; Free Upgrades</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn--dark" id="pack-ultimate-cta">Select Plan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════ CHANNEL HIGHLIGHTS (Marquee) ════════════ -->
+    <section class="channels section" id="channels">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__tag">Channels</span>
+          <h2 class="section__title" style="color: var(--color-white);">500+ Channels You Love</h2>
+          <p class="section__subtitle">From sports to movies, news to kids – every genre, every language, all in stunning HD.</p>
+        </div>
+      </div>
+      <div class="channels__marquee">
+        <div class="channel-logo">Star Sports</div>
+        <div class="channel-logo">HBO</div>
+        <div class="channel-logo">Discovery</div>
+        <div class="channel-logo">CNN</div>
+        <div class="channel-logo">Cartoon Net</div>
+        <div class="channel-logo">Nat Geo</div>
+        <div class="channel-logo">Sony MAX</div>
+        <div class="channel-logo">Zee Cinema</div>
+        <div class="channel-logo">Colors</div>
+        <div class="channel-logo">MTV</div>
+        <div class="channel-logo">ESPN</div>
+        <div class="channel-logo">BBC World</div>
+        <div class="channel-logo">Fox News</div>
+        <div class="channel-logo">Nick</div>
+        <div class="channel-logo">History</div>
+        <div class="channel-logo">TLC</div>
+        <div class="channel-logo">NDTV</div>
+        <div class="channel-logo">Aaj Tak</div>
+      </div>
+    </section>
+
+
+    <!-- ════════════ WHY SMARTCABLE – FEATURES ════════════ -->
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__tag">Why SmartCable</span>
+          <h2 class="section__title">The Smart Way to Watch TV</h2>
+          <p class="section__subtitle">Cutting-edge technology meets unbeatable entertainment.</p>
+        </div>
+
+        <div class="features__grid">
+          <div class="feature-card animate-on-scroll" id="feature-hd">
+            <div class="feature-card__icon">📡</div>
+            <h3 class="feature-card__title">Crystal Clear HD</h3>
+            <p class="feature-card__desc">Experience stunning picture quality with our 4K-ready set top boxes and HD channels.</p>
+          </div>
+
+          <div class="feature-card animate-on-scroll" id="feature-smart">
+            <div class="feature-card__icon">🎙️</div>
+            <h3 class="feature-card__title">Voice Control</h3>
+            <p class="feature-card__desc">Just say what you want to watch. Our smart remote understands you perfectly.</p>
+          </div>
+
+          <div class="feature-card animate-on-scroll" id="feature-record">
+            <div class="feature-card__icon">⏺️</div>
+            <h3 class="feature-card__title">Record &amp; Pause</h3>
+            <p class="feature-card__desc">Never miss your favourite shows. Record live TV and watch on your schedule.</p>
+          </div>
+
+          <div class="feature-card animate-on-scroll" id="feature-ott">
+            <div class="feature-card__icon">🌐</div>
+            <h3 class="feature-card__title">Built-in OTT</h3>
+            <p class="feature-card__desc">Access Netflix, Prime Video, Disney+ and more directly from your set top box.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════ APP DOWNLOAD STRIP ════════════ -->
+    <section class="app-strip section" id="app">
+      <div class="container">
+        <div class="app-strip__inner">
+          <div class="app-strip__content animate-on-scroll">
+            <span class="section__tag">Mobile App</span>
+            <h2 class="app-strip__title">SmartCable in <span>Your Pocket</span></h2>
+            <p class="app-strip__desc">
+              Watch Live TV, manage your account, recharge instantly, and stream your favourite channels on the go with the SmartCable app.
+            </p>
+            <div class="app-strip__buttons">
+              <a href="#" class="app-strip__store-btn" id="app-google-play">
+                <span class="app-strip__store-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.609 22.186a.996.996 0 0 1-.609-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.707l2.108 1.221a1 1 0 0 1 0 1.758l-2.108 1.221-2.537-2.1 2.537-2.1zM5.864 2.658L16.801 8.99l-2.302 2.302-8.635-8.634z"/></svg>
+                </span>
+                <span class="app-strip__store-text">
+                  <small>Get it on</small>
+                  <strong>Google Play</strong>
+                </span>
+              </a>
+              <a href="#" class="app-strip__store-btn" id="app-apple-store">
+                <span class="app-strip__store-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                </span>
+                <span class="app-strip__store-text">
+                  <small>Download on the</small>
+                  <strong>App Store</strong>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="app-strip__image animate-on-scroll">
+            <img src="images/app-mockup.png" alt="SmartCable Mobile App" width="400" height="400" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════ TESTIMONIALS ════════════ -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__tag">Testimonials</span>
+          <h2 class="section__title">What Our Customers Say</h2>
+          <p class="section__subtitle">Join millions of happy households across the country.</p>
+        </div>
+
+        <div class="testimonials__grid">
+          <div class="testimonial-card animate-on-scroll" id="testimonial-1">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              "SmartCable transformed our TV experience. The picture quality is incredible, and having Netflix built right into the box is a game changer!"
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">R</div>
+              <div>
+                <div class="testimonial-card__name">Rahul Sharma</div>
+                <div class="testimonial-card__location">Delhi</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card animate-on-scroll" id="testimonial-2">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              "Switching from my old cable provider was the best decision. Voice remote, 500+ channels, and the recharge is so easy through the app!"
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">P</div>
+              <div>
+                <div class="testimonial-card__name">Priya Patel</div>
+                <div class="testimonial-card__location">Mumbai</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card animate-on-scroll" id="testimonial-3">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text">
+              "The Ultimate Pack is amazing value. My kids love the cartoon channels, I get all my sports, and my wife enjoys the entertainment – everyone is happy!"
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">A</div>
+              <div>
+                <div class="testimonial-card__name">Amit Verma</div>
+                <div class="testimonial-card__location">Bangalore</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════ CTA BANNER ════════════ -->
+    <section class="cta-banner" id="cta">
+      <div class="container">
+        <h2 class="cta-banner__title animate-on-scroll">Ready to Go Smart?</h2>
+        <p class="cta-banner__desc animate-on-scroll">
+          Get your SmartCable connection today and enjoy 30 days free with any plan. Limited time offer!
+        </p>
+        <div class="cta-banner__actions animate-on-scroll">
+          <a href="#packs" class="btn btn--dark btn--lg" id="cta-get-connection">
+            Get New Connection
+          </a>
+          <a href="#recharge" class="btn btn--secondary btn--lg" id="cta-recharge">
+            Recharge Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════ FOOTER PLACEHOLDER ════════════ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Component Loader -->
+  <script src="js/components.js"></script>
+
+</body>
+</html>
