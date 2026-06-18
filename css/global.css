@@ -31,10 +31,19 @@
   --color-warning: #f59e0b;
   --color-error: #ef4444;
 
+  /* Offers Page Gradients & Hex Replacements */
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-purple-500: #8b5cf6;
+  --color-purple-600: #7c3aed;
+  --color-teal-500: #0d9488;
+  --color-teal-600: #0f766e;
+  --color-dark-bg: #0e1e36;
+
   /* Gradients (reference variables, no raw hex) */
   --gradient-hero: linear-gradient(135deg, var(--color-secondary) 0%, rgba(29, 53, 87, 0.7) 60%, transparent 100%);
   --gradient-cta: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  --gradient-dark: linear-gradient(180deg, var(--color-secondary) 0%, #0e1e36 100%);
+  --gradient-dark: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-dark-bg) 100%);
   --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
 
   /* Typography */
@@ -544,4 +553,31 @@ h1, h2, h3, h4, h5, h6 {
 ::selection {
   background: rgba(230, 57, 70, 0.15);
   color: var(--color-secondary);
+}
+
+/* ── Utility Classes ── */
+.u-hidden {
+  display: none !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-w-full {
+  width: 100% !important;
+}
+
+.u-color-white {
+  color: var(--color-white) !important;
+}
+
+.u-inline-svg {
+  display: inline-block;
+  vertical-align: -1px;
+}
+
+.u-vertical-align-middle {
+  vertical-align: -3px;
+  margin-right: 8px;
 }

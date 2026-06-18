@@ -268,3 +268,24 @@
   vertical-align: middle;
 }
 
+#comparison-section {
+  display: none;
+}
+
+.comparison-table th.highlight-col svg {
+  display: inline-block;
+  vertical-align: -1px;
+  color: var(--color-warning);
+  margin-left: 2px;
+}
+
+.packs__compare-btn-wrap {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+.cta-banner__desc a {
+  text-decoration: underline;
+  color: inherit;
+}
+

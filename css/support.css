@@ -165,6 +165,10 @@
   box-shadow: var(--shadow-lg);
 }
 
+#contact-submit {
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .contact-form {
     padding: var(--space-2xl);
