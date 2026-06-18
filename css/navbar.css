@@ -80,11 +80,19 @@
 }
 
 .navbar__logo-text {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .navbar__logo-text span {
   color: var(--color-primary);
+}
+
+.navbar__logo-services {
+  font-weight: var(--fw-medium);
+  font-size: 0.85em;
+  opacity: 0.8;
 }
 
 /* Desktop Nav Links */
