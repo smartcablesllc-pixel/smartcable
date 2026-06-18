@@ -83,6 +83,10 @@
                 <input type="email" class="form-input" id="sub-email" name="email" placeholder="john@example.com"
                   required>
               </div>
+              <div class="form-group">
+                <label for="sub-id">Subscriber ID (Optional)</label>
+                <input type="text" class="form-input" id="sub-id" name="subscriber_id" placeholder="e.g. 1000234567">
+              </div>
             </div>
           </div>
 
@@ -197,6 +201,45 @@
               break;
             }
           }
+        }
+      }
+
+      // Auto-fill phone/subscriber ID from URL parameters
+      var phoneParam = params.get('phone');
+      var subIdParam = params.get('subscriber_id');
+      var rechargeVal = params.get('recharge_val');
+
+      if (phoneParam) {
+        var phoneEl = document.getElementById('sub-phone');
+        if (phoneEl) phoneEl.value = decodeURIComponent(phoneParam);
+      }
+      if (subIdParam) {
+        var idEl = document.getElementById('sub-id');
+        if (idEl) idEl.value = decodeURIComponent(subIdParam);
+      }
+      if (rechargeVal && !phoneParam && !subIdParam) {
+        rechargeVal = decodeURIComponent(rechargeVal).trim();
+        var isPhone = false;
+        if (/[\+\-\(\)\s]/.test(rechargeVal)) {
+          isPhone = true;
+        } else if (/^\d+$/.test(rechargeVal)) {
+          if (rechargeVal.length === 10 && /^[2-9]/.test(rechargeVal)) {
+            isPhone = true;
+          } else if (rechargeVal.length < 8) {
+            isPhone = true;
+          } else {
+            isPhone = false;
+          }
+        } else {
+          isPhone = false;
+        }
+
+        if (isPhone) {
+          var phoneEl = document.getElementById('sub-phone');
+          if (phoneEl) phoneEl.value = rechargeVal;
+        } else {
+          var idEl = document.getElementById('sub-id');
+          if (idEl) idEl.value = rechargeVal;
         }
       }
 

@@ -37,6 +37,7 @@
     initFilterTabs();
     initChannelSearch();
     initComparisonToggle();
+    initRechargeBar();
   }
 
   /* ══════════════════════════════════════════════
@@ -276,6 +277,32 @@
       if (hidden) {
         table.style.animation = 'fadeInUp 0.5s ease both';
         table.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     RECHARGE BAR LOGIC (index.html)
+     ══════════════════════════════════════════════ */
+  function initRechargeBar() {
+    var inputEl = document.getElementById('recharge-input');
+    var btnEl = document.getElementById('recharge-btn');
+    if (!inputEl || !btnEl) return;
+
+    function handleProceed() {
+      var val = inputEl.value.trim();
+      if (!val) {
+        inputEl.focus();
+        return;
+      }
+      window.location.href = 'subscribe.html?recharge_val=' + encodeURIComponent(val);
+    }
+
+    btnEl.addEventListener('click', handleProceed);
+
+    inputEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        handleProceed();
       }
     });
   }
