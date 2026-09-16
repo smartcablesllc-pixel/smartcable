@@ -1,5 +1,6 @@
 /* ============================================================
    SmartCable – Navbar Styles (css/navbar.css)
+   Futuristic Cyber-Tech Frosted Glass Navbar
    ============================================================ */
 
 .navbar {
@@ -17,41 +18,41 @@
 /* Transparent State (default on hero pages) */
 .navbar--transparent {
   background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-white);
+  border-bottom: 1px solid rgba(0, 242, 254, 0.08);
+  color: var(--color-text-main);
 }
 
 .navbar--transparent .navbar__link {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .navbar--transparent .navbar__link:hover {
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
-/* Scrolled / Non-hero Pages State */
+/* Scrolled / Non-hero Pages State — Frosted Glass */
 .navbar--scrolled {
-  background-color: rgba(29, 53, 87, 0.95); /* Deep secondary with opacity */
+  background: rgba(18, 20, 29, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-md);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--color-white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 242, 254, 0.08);
+  border-bottom: 1px solid rgba(0, 242, 254, 0.1);
+  color: var(--color-text-main);
 }
 
 .navbar--scrolled .navbar__link {
-  color: var(--color-gray-200);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .navbar--scrolled .navbar__link:hover {
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
 .navbar__inner {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-xl);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,7 +67,7 @@
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
   letter-spacing: -0.02em;
-  color: var(--color-white);
+  color: var(--color-text-main);
   transition: transform var(--transition-fast);
 }
 
@@ -87,12 +88,13 @@
 
 .navbar__logo-text span {
   color: var(--color-primary);
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.5);
 }
 
 .navbar__logo-services {
   font-weight: var(--fw-medium);
   font-size: 0.85em;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 /* Desktop Nav Links */
@@ -114,6 +116,7 @@
   padding: var(--space-xs) 0;
   position: relative;
   transition: color var(--transition-fast);
+  color: rgba(255,255,255,0.8);
 }
 
 .navbar__link::after {
@@ -123,10 +126,11 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary);
+  background: var(--gradient-neon);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform var(--transition-base);
+  border-radius: 1px;
 }
 
 .navbar__link:hover::after,
@@ -138,6 +142,23 @@
 .navbar__link--active {
   color: var(--color-primary) !important;
   font-weight: var(--fw-semibold);
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+.navbar__link--highlight {
+  color: var(--color-primary) !important;
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  padding: 4px 14px !important;
+  border-radius: var(--radius-full);
+  background: rgba(0, 242, 254, 0.08);
+  font-weight: var(--fw-semibold);
+  transition: all var(--transition-fast);
+}
+
+.navbar__link--highlight:hover {
+  background: rgba(0, 242, 254, 0.2);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.4);
 }
 
 /* Actions Area */
@@ -179,9 +200,10 @@
 .navbar__toggle-bar {
   width: 100%;
   height: 2px;
-  background-color: var(--color-white);
+  background-color: var(--color-primary);
   border-radius: 2px;
   transition: transform var(--transition-base), opacity var(--transition-base);
+  box-shadow: 0 0 6px rgba(0, 242, 254, 0.5);
 }
 
 /* Active Hamburger State */
@@ -204,7 +226,10 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: var(--color-secondary);
+  background: rgba(9, 10, 15, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--border-card);
   z-index: var(--z-dropdown);
   display: flex;
   flex-direction: column;
@@ -225,13 +250,14 @@
   font-family: var(--font-display);
   font-size: var(--fs-xl);
   font-weight: var(--fw-bold);
-  color: var(--color-white);
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  color: var(--color-text-main);
+  transition: color var(--transition-fast), transform var(--transition-fast), text-shadow var(--transition-fast);
 }
 
 .navbar__mobile-link:hover {
   color: var(--color-primary);
   transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
 }
 
 .navbar__mobile-cta {
@@ -244,4 +270,3 @@
   width: 100%;
   text-align: center;
 }
-

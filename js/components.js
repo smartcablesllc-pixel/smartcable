@@ -38,6 +38,8 @@
     initChannelSearch();
     initComparisonToggle();
     initRechargeBar();
+    initProductBuyButtons();
+    initImageFallbacks();
   }
 
   /* ══════════════════════════════════════════════
@@ -103,7 +105,7 @@
       }
     });
 
-    /* ── Scroll-based active (only on index.html with section anchors) ── */
+    /* ── Scroll-based active (only on SPA with section anchors) ── */
     if (hasHero) {
       var sections = document.querySelectorAll('section[id]');
       function updateActiveLink() {
@@ -123,6 +125,7 @@
         });
       }
       window.addEventListener('scroll', updateActiveLink, { passive: true });
+      updateActiveLink();
     }
   }
 
@@ -156,12 +159,23 @@
       if (!link) return;
       var id = link.getAttribute('href');
       if (id.length < 2) return;
-      var target = document.querySelector(id);
+      var target = null;
+      try {
+        target = document.querySelector(id);
+      } catch (err) {
+        target = null;
+      }
       if (target) {
         e.preventDefault();
         var offset = 80;
         var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: y, behavior: 'smooth' });
+      } else {
+        var page = window.location.pathname.split('/').pop() || 'index.html';
+        if (page !== 'index.html' && page !== '') {
+          e.preventDefault();
+          window.location.href = 'index.html' + id;
+        }
       }
     });
   }
@@ -209,7 +223,7 @@
   }
 
   /* ══════════════════════════════════════════════
-     FILTER TABS (packages / channels / offers)
+     FILTER TABS (products / packages / channels / offers)
      ══════════════════════════════════════════════ */
   function initFilterTabs() {
     var tabGroups = document.querySelectorAll('[data-filter-group]');
@@ -227,10 +241,18 @@
 
           var filterVal = tab.dataset.filter;
           var items = container.querySelectorAll('[data-category]');
+          var delay = 0;
           items.forEach(function (item) {
             if (filterVal === 'all' || item.dataset.category === filterVal) {
               item.style.display = '';
-              item.style.animation = 'fadeInUp 0.4s ease both';
+              item.style.animation = 'none';
+              /* stagger the fade-in */
+              (function (el, d) {
+                setTimeout(function () {
+                  el.style.animation = 'fadeInUp 0.4s ease both';
+                }, d);
+              })(item, delay);
+              delay += 30;
             } else {
               item.style.display = 'none';
             }
@@ -282,7 +304,7 @@
   }
 
   /* ══════════════════════════════════════════════
-     RECHARGE BAR LOGIC (index.html)
+     RECHARGE BAR LOGIC (legacy – graceful no-op)
      ══════════════════════════════════════════════ */
   function initRechargeBar() {
     var inputEl = document.getElementById('recharge-input');
@@ -291,19 +313,94 @@
 
     function handleProceed() {
       var val = inputEl.value.trim();
-      if (!val) {
-        inputEl.focus();
-        return;
-      }
+      if (!val) { inputEl.focus(); return; }
       window.location.href = 'subscribe.html?recharge_val=' + encodeURIComponent(val);
     }
 
     btnEl.addEventListener('click', handleProceed);
-
     inputEl.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') {
-        handleProceed();
+      if (e.key === 'Enter') { handleProceed(); }
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     PRODUCT BUY BUTTONS (Buy Now -> Contact Form Pre-fill)
+     ══════════════════════════════════════════════ */
+  function initProductBuyButtons() {
+    var grid = document.getElementById('products-grid');
+    if (!grid) return;
+    grid.addEventListener('click', function (e) {
+      var btn = e.target.closest('.product-card__btn');
+      if (!btn) return;
+      e.preventDefault();
+      var card = btn.closest('.product-card');
+      var name = card ? (card.querySelector('.product-card__name') || {}).textContent || 'Product' : 'Product';
+      var price = card ? (card.querySelector('.product-card__price') || {}).textContent || '' : '';
+      name = name.trim();
+      price = price.trim();
+
+      /* Flash button state */
+      var orig = btn.textContent;
+      btn.textContent = '\u2713 Selected!';
+      btn.style.background = 'linear-gradient(135deg, #10b981, #34d399)';
+      btn.style.boxShadow = '0 0 16px rgba(16, 185, 129, 0.6)';
+      setTimeout(function () {
+        btn.textContent = orig;
+        btn.style.background = '';
+        btn.style.boxShadow = '';
+      }, 2000);
+
+      /* Pre-fill Contact Form */
+      var subjectInput = document.getElementById('contact-subject');
+      var messageInput = document.getElementById('contact-message');
+      var nameInput = document.getElementById('contact-name');
+
+      if (subjectInput) {
+        subjectInput.value = 'Interested in purchasing: ' + name;
       }
+      if (messageInput) {
+        messageInput.value = 'Hi, I am interested in purchasing the ' + name + (price ? ' (' + price + ')' : '') + '. Please provide ordering and delivery details.';
+      }
+
+      /* Smooth scroll to contact section */
+      var contactSection = document.getElementById('contact');
+      if (contactSection) {
+        var offset = 70;
+        var y = contactSection.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        setTimeout(function () {
+          if (nameInput && !nameInput.value) {
+            nameInput.focus();
+          } else if (messageInput) {
+            messageInput.focus();
+          }
+        }, 800);
+      }
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     IMAGE FALLBACKS (Gracefully handle offline / broken CDN links)
+     ══════════════════════════════════════════════ */
+  function initImageFallbacks() {
+    var imgs = document.querySelectorAll('.product-card__img');
+    imgs.forEach(function (img) {
+      img.addEventListener('error', function () {
+        var card = img.closest('.product-card');
+        var name = card ? (card.querySelector('.product-card__name') || {}).textContent || 'Product' : 'Product';
+        name = name.trim();
+        var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">' +
+          '<rect width="400" height="300" fill="#0d111a"/>' +
+          '<circle cx="200" cy="130" r="45" fill="none" stroke="#00f2fe" stroke-width="2" opacity="0.4"/>' +
+          '<path d="M185 130h30M200 115v30" stroke="#00f2fe" stroke-width="2" stroke-linecap="round"/>' +
+          '<text x="200" y="210" font-family="sans-serif" font-size="14" font-weight="bold" fill="#00f2fe" text-anchor="middle">' +
+          name.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') +
+          '</text>' +
+          '<text x="200" y="235" font-family="sans-serif" font-size="11" fill="#707d93" text-anchor="middle">SMART CABLE SERVICES</text>' +
+          '</svg>';
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+        img.classList.add('product-card__img--fallback');
+      });
     });
   }
 

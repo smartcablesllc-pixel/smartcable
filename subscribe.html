@@ -25,6 +25,15 @@
 
 <body>
 
+  <!-- Ambient Floating Tech Glassmorphic Shapes (Margin Decor) -->
+  <div class="ambient-shapes" aria-hidden="true">
+    <div class="ambient-shape ambient-shape--1"></div>
+    <div class="ambient-shape ambient-shape--2"></div>
+    <div class="ambient-shape ambient-shape--3"></div>
+    <div class="ambient-shape ambient-shape--grid ambient-shape--grid-left"></div>
+    <div class="ambient-shape ambient-shape--grid ambient-shape--grid-right"></div>
+  </div>
+
   <!-- ════════ NAVBAR PLACEHOLDER ════════ -->
   <div id="navbar-placeholder"></div>
 
@@ -33,10 +42,17 @@
     <!-- ════════ PAGE HERO ════════ -->
     <section class="page-hero">
       <div class="container">
-        <span class="page-hero__tag">Subscription Checkout</span>
-        <h1 class="page-hero__title">Start Your <span>Smart Cable Services Journey</span></h1>
-        <p class="page-hero__subtitle">Fill in your details below to request a subscription. A representative will
-          contact you shortly to activate your connection.</p>
+        <span class="page-hero__tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Instant Activation &amp; 24/7 Setup
+        </span>
+        <h1 class="page-hero__title">Start Your <span>Smart Cable Journey</span></h1>
+        <p class="page-hero__subtitle">
+          Fill in your details below to request a new subscription or recharge your account.
+          A Smart Cable specialist will contact you promptly to activate your service.
+        </p>
       </div>
     </section>
 
@@ -182,7 +198,7 @@
   <script src="js/components.js"></script>
   <script src="js/main.js" defer></script>
 
-  <!-- ── Submission Success Check ── -->
+  <!-- ── Interactive Submission & URL Param Logic ── -->
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
@@ -268,7 +284,6 @@
       }
 
       if (params.get('submitted') === 'true') {
-        /* Create toast alert */
         var toast = document.createElement('div');
         toast.className = 'success-toast';
         toast.setAttribute('role', 'alert');
@@ -278,14 +293,12 @@
           '<button class="success-toast__close" aria-label="Close">&times;</button>';
         document.body.appendChild(toast);
 
-        /* Close toast and clean URL parameter */
         toast.querySelector('.success-toast__close').addEventListener('click', function () {
           toast.remove();
           var cleanUrl = window.location.pathname;
           window.history.replaceState({}, document.title, cleanUrl);
         });
 
-        /* Auto-dismiss toast after 8 seconds */
         setTimeout(function () {
           if (toast.parentNode) {
             toast.style.animation = 'fadeIn 0.3s ease reverse forwards';

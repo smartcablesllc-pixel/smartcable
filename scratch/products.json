@@ -1,0 +1,602 @@
+[
+  {
+    "index": 1,
+    "cat": "streaming",
+    "id": "prod-apple-tv",
+    "src": "images/products/prod-apple-tv.jpg",
+    "alt": "Apple TV 4K (128GB)",
+    "brand": "Apple",
+    "name": "Apple TV 4K (128GB)",
+    "price": "$149.99"
+  },
+  {
+    "index": 2,
+    "cat": "streaming",
+    "id": "prod-roku-ultra",
+    "src": "images/products/prod-roku-ultra.jpg",
+    "alt": "Roku Ultra 4K Streaming Box",
+    "brand": "Roku",
+    "name": "Roku Ultra 4K Streaming Box",
+    "price": "$99.99"
+  },
+  {
+    "index": 3,
+    "cat": "streaming",
+    "id": "prod-fire-cube",
+    "src": "images/products/prod-fire-cube.jpg",
+    "alt": "Amazon Fire TV Cube (3rd Gen)",
+    "brand": "Amazon",
+    "name": "Amazon Fire TV Cube (3rd Gen)",
+    "price": "$139.99"
+  },
+  {
+    "index": 4,
+    "cat": "streaming",
+    "id": "prod-nvidia-shield",
+    "src": "images/products/prod-nvidia-shield.jpg",
+    "alt": "NVIDIA Shield TV Pro",
+    "brand": "NVIDIA",
+    "name": "NVIDIA Shield TV Pro",
+    "price": "$199.99"
+  },
+  {
+    "index": 5,
+    "cat": "streaming",
+    "id": "prod-chromecast",
+    "src": "images/products/prod-chromecast.jpg",
+    "alt": "Chromecast with Google TV (4K)",
+    "brand": "Google",
+    "name": "Chromecast with Google TV (4K)",
+    "price": "$49.99"
+  },
+  {
+    "index": 6,
+    "cat": "streaming",
+    "id": "prod-xiaomi-mibox",
+    "src": "images/products/prod-xiaomi-mibox.jpg",
+    "alt": "Xiaomi Mi Box S 4K",
+    "brand": "Xiaomi",
+    "name": "Xiaomi Mi Box S 4K",
+    "price": "$59.99"
+  },
+  {
+    "index": 7,
+    "cat": "streaming",
+    "id": "prod-tivo-stream",
+    "src": "images/products/prod-tivo-stream.jpg",
+    "alt": "TiVo Stream 4K",
+    "brand": "TiVo",
+    "name": "TiVo Stream 4K",
+    "price": "$39.99"
+  },
+  {
+    "index": 8,
+    "cat": "streaming",
+    "id": "prod-onn-google",
+    "src": "images/products/prod-onn-google.jpg",
+    "alt": "Onn. Google TV 4K Streaming Box",
+    "brand": "Onn.",
+    "name": "Onn. Google TV 4K Streaming Box",
+    "price": "$19.99"
+  },
+  {
+    "index": 9,
+    "cat": "streaming",
+    "id": "prod-formuler-z11",
+    "src": "images/products/prod-formuler-z11.jpg",
+    "alt": "Formuler Z11 Pro Max",
+    "brand": "Formuler",
+    "name": "Formuler Z11 Pro Max",
+    "price": "$159.99"
+  },
+  {
+    "index": 10,
+    "cat": "streaming",
+    "id": "prod-roku-express",
+    "src": "images/products/prod-roku-express.jpg",
+    "alt": "Roku Express 4K+",
+    "brand": "Roku",
+    "name": "Roku Express 4K+",
+    "price": "$39.99"
+  },
+  {
+    "index": 11,
+    "cat": "simple-remote",
+    "id": "prod-ge-remote",
+    "src": "images/products/prod-ge-remote.jpg",
+    "alt": "GE 4-Device Universal Remote",
+    "brand": "GE",
+    "name": "GE 4-Device Universal Remote",
+    "price": "$14.99"
+  },
+  {
+    "index": 12,
+    "cat": "simple-remote",
+    "id": "prod-rca-remote",
+    "src": "images/products/prod-rca-remote.jpg",
+    "alt": "RCA 3-Device Basic TV Remote",
+    "brand": "RCA",
+    "name": "RCA 3-Device Basic TV Remote",
+    "price": "$9.99"
+  },
+  {
+    "index": 13,
+    "cat": "simple-remote",
+    "id": "prod-ofa-contour",
+    "src": "images/products/prod-ofa-contour.jpg",
+    "alt": "One For All Contour Universal",
+    "brand": "One For All",
+    "name": "One For All Contour Universal",
+    "price": "$12.99"
+  },
+  {
+    "index": 14,
+    "cat": "simple-remote",
+    "id": "prod-philips-remote",
+    "src": "images/products/prod-philips-remote.jpg",
+    "alt": "Philips 4-Device Universal Remote",
+    "brand": "Philips",
+    "name": "Philips 4-Device Universal Remote",
+    "price": "$11.99"
+  },
+  {
+    "index": 15,
+    "cat": "simple-remote",
+    "id": "prod-inteset-remote",
+    "src": "images/products/prod-inteset-remote.jpg",
+    "alt": "Inteset 4-in-1 Universal Backlit",
+    "brand": "Inteset",
+    "name": "Inteset 4-in-1 Universal Backlit",
+    "price": "$26.99"
+  },
+  {
+    "index": 16,
+    "cat": "simple-remote",
+    "id": "prod-sony-remote",
+    "src": "images/products/prod-sony-remote.jpg",
+    "alt": "Sony RM-VLZ620 Universal",
+    "brand": "Sony",
+    "name": "Sony RM-VLZ620 Universal",
+    "price": "$24.99"
+  },
+  {
+    "index": 17,
+    "cat": "simple-remote",
+    "id": "prod-samsung-remote",
+    "src": "images/products/prod-samsung-remote.jpg",
+    "alt": "Samsung Basic Replacement Remote",
+    "brand": "Samsung",
+    "name": "Samsung Basic Replacement Remote",
+    "price": "$13.99"
+  },
+  {
+    "index": 18,
+    "cat": "simple-remote",
+    "id": "prod-lg-magic-basic",
+    "src": "images/products/prod-lg-magic-basic.jpg",
+    "alt": "LG Magic Remote (Basic Edition)",
+    "brand": "LG",
+    "name": "LG Magic Remote (Basic Edition)",
+    "price": "$19.99"
+  },
+  {
+    "index": 19,
+    "cat": "simple-remote",
+    "id": "prod-vizio-remote",
+    "src": "images/products/prod-vizio-remote.jpg",
+    "alt": "Vizio Universal Replacement Remote",
+    "brand": "Vizio",
+    "name": "Vizio Universal Replacement Remote",
+    "price": "$10.99"
+  },
+  {
+    "index": 20,
+    "cat": "simple-remote",
+    "id": "prod-panasonic-remote",
+    "src": "images/products/prod-panasonic-remote.jpg",
+    "alt": "Panasonic N2QAYB Universal",
+    "brand": "Panasonic",
+    "name": "Panasonic N2QAYB Universal",
+    "price": "$15.99"
+  },
+  {
+    "index": 21,
+    "cat": "smart-tv",
+    "id": "prod-samsung-cu7000",
+    "src": "images/products/prod-samsung-cu7000.jpg",
+    "alt": "Samsung 65-inch Class CU7000 Crystal UHD",
+    "brand": "Samsung",
+    "name": "Samsung 65\" CU7000 Crystal UHD",
+    "price": "$479.99"
+  },
+  {
+    "index": 22,
+    "cat": "smart-tv",
+    "id": "prod-lg-uq75",
+    "src": "images/products/prod-lg-uq75.jpg",
+    "alt": "LG 55-inch Class UQ75 Series LED 4K",
+    "brand": "LG",
+    "name": "LG 55\" UQ75 Series LED 4K",
+    "price": "$379.99"
+  },
+  {
+    "index": 23,
+    "cat": "smart-tv",
+    "id": "prod-sony-x90k",
+    "src": "images/products/prod-sony-x90k.jpg",
+    "alt": "Sony 55-inch BRAVIA XR X90K 4K HDR",
+    "brand": "Sony",
+    "name": "Sony 55\" BRAVIA XR X90K 4K HDR",
+    "price": "$899.99"
+  },
+  {
+    "index": 24,
+    "cat": "smart-tv",
+    "id": "prod-tcl-6series",
+    "src": "images/products/prod-tcl-6series.jpg",
+    "alt": "TCL 65-inch Class 6-Series 4K Mini-LED",
+    "brand": "TCL",
+    "name": "TCL 65\" Class 6-Series 4K Mini-LED",
+    "price": "$699.99"
+  },
+  {
+    "index": 25,
+    "cat": "smart-tv",
+    "id": "prod-hisense-u8h",
+    "src": "images/products/prod-hisense-u8h.jpg",
+    "alt": "Hisense 55-inch Class U8H Quantum 4K ULED",
+    "brand": "Hisense",
+    "name": "Hisense 55\" U8H Quantum 4K ULED",
+    "price": "$649.99"
+  },
+  {
+    "index": 26,
+    "cat": "smart-tv",
+    "id": "prod-vizio-mseries",
+    "src": "images/products/prod-vizio-mseries.jpg",
+    "alt": "Vizio 50-inch Class M-Series Quantum 4K",
+    "brand": "Vizio",
+    "name": "Vizio 50\" M-Series Quantum 4K",
+    "price": "$399.99"
+  },
+  {
+    "index": 27,
+    "cat": "smart-tv",
+    "id": "prod-panasonic-lz2000",
+    "src": "images/products/prod-panasonic-lz2000.jpg",
+    "alt": "Panasonic 65-inch LZ2000 OLED",
+    "brand": "Panasonic",
+    "name": "Panasonic 65\" LZ2000 OLED",
+    "price": "$2,199.99"
+  },
+  {
+    "index": 28,
+    "cat": "smart-tv",
+    "id": "prod-philips-oled907",
+    "src": "images/products/prod-philips-oled907.jpg",
+    "alt": "Philips 55-inch OLED+907",
+    "brand": "Philips",
+    "name": "Philips 55\" OLED+907",
+    "price": "$1,499.99"
+  },
+  {
+    "index": 29,
+    "cat": "smart-tv",
+    "id": "prod-toshiba-c350",
+    "src": "images/products/prod-toshiba-c350.jpg",
+    "alt": "Toshiba 50-inch Class C350 Series LED 4K",
+    "brand": "Toshiba",
+    "name": "Toshiba 50\" C350 Series LED 4K",
+    "price": "$289.99"
+  },
+  {
+    "index": 30,
+    "cat": "smart-tv",
+    "id": "prod-insignia-f30",
+    "src": "images/products/prod-insignia-f30.jpg",
+    "alt": "Insignia 43-inch Class F30 Series LED 4K",
+    "brand": "Insignia",
+    "name": "Insignia 43\" Class F30 Series LED 4K",
+    "price": "$199.99"
+  },
+  {
+    "index": 31,
+    "cat": "smart-remote",
+    "id": "prod-sofabaton-u2",
+    "src": "images/products/prod-sofabaton-u2.jpg",
+    "alt": "SofaBaton U2 Universal Smart Remote",
+    "brand": "SofaBaton",
+    "name": "SofaBaton U2 Universal Smart Remote",
+    "price": "$49.99"
+  },
+  {
+    "index": 32,
+    "cat": "smart-remote",
+    "id": "prod-sofabaton-x1",
+    "src": "images/products/prod-sofabaton-x1.jpg",
+    "alt": "SofaBaton X1 Universal Remote with Hub",
+    "brand": "SofaBaton",
+    "name": "SofaBaton X1 Universal Remote with Hub",
+    "price": "$189.99"
+  },
+  {
+    "index": 33,
+    "cat": "smart-remote",
+    "id": "prod-apple-siri",
+    "src": "images/products/prod-apple-siri.jpg",
+    "alt": "Apple Siri Remote (USB-C)",
+    "brand": "Apple",
+    "name": "Apple Siri Remote (USB-C)",
+    "price": "$59.99"
+  },
+  {
+    "index": 34,
+    "cat": "smart-remote",
+    "id": "prod-roku-voice-pro",
+    "src": "images/products/prod-roku-voice-pro.jpg",
+    "alt": "Roku Voice Remote Pro",
+    "brand": "Roku",
+    "name": "Roku Voice Remote Pro",
+    "price": "$29.99"
+  },
+  {
+    "index": 35,
+    "cat": "smart-remote",
+    "id": "prod-alexa-voice",
+    "src": "images/products/prod-alexa-voice.jpg",
+    "alt": "Amazon Alexa Voice Remote Pro",
+    "brand": "Amazon",
+    "name": "Amazon Alexa Voice Remote Pro",
+    "price": "$34.99"
+  },
+  {
+    "index": 36,
+    "cat": "smart-remote",
+    "id": "prod-broadlink-rm4",
+    "src": "images/products/prod-broadlink-rm4.jpg",
+    "alt": "BroadLink RM4 Pro Smart Remote",
+    "brand": "BroadLink",
+    "name": "BroadLink RM4 Pro Smart Remote",
+    "price": "$44.99"
+  },
+  {
+    "index": 37,
+    "cat": "smart-remote",
+    "id": "prod-switchbot-remote",
+    "src": "images/products/prod-switchbot-remote.jpg",
+    "alt": "SwitchBot Smart Universal Remote",
+    "brand": "SwitchBot",
+    "name": "SwitchBot Smart Universal Remote",
+    "price": "$59.99"
+  },
+  {
+    "index": 38,
+    "cat": "smart-remote",
+    "id": "prod-ofa-smart8",
+    "src": "images/products/prod-ofa-smart8.jpg",
+    "alt": "One For All Smart Control 8",
+    "brand": "One For All",
+    "name": "One For All Smart Control 8",
+    "price": "$39.99"
+  },
+  {
+    "index": 39,
+    "cat": "smart-remote",
+    "id": "prod-caavo",
+    "src": "images/products/prod-caavo.jpg",
+    "alt": "Caavo Control Center",
+    "brand": "Caavo",
+    "name": "Caavo Control Center",
+    "price": "$99.99"
+  },
+  {
+    "index": 40,
+    "cat": "smart-remote",
+    "id": "prod-auvi-g9pro",
+    "src": "images/products/prod-auvi-g9pro.jpg",
+    "alt": "AuviPal G9 Pro Voice Remote",
+    "brand": "AuviPal",
+    "name": "AuviPal G9 Pro Voice Remote",
+    "price": "$24.99"
+  },
+  {
+    "index": 41,
+    "cat": "mouse",
+    "id": "prod-logi-mx3s",
+    "src": "images/products/prod-logi-mx3s.jpg",
+    "alt": "Logitech MX Master 3S Performance",
+    "brand": "Logitech",
+    "name": "Logitech MX Master 3S Performance",
+    "price": "$99.99"
+  },
+  {
+    "index": 42,
+    "cat": "mouse",
+    "id": "prod-razer-proclick",
+    "src": "images/products/prod-razer-proclick.jpg",
+    "alt": "Razer Pro Click Mini Ergonomic",
+    "brand": "Razer",
+    "name": "Razer Pro Click Mini Ergonomic",
+    "price": "$79.99"
+  },
+  {
+    "index": 43,
+    "cat": "mouse",
+    "id": "prod-anker-ergo",
+    "src": "images/products/prod-anker-ergo.jpg",
+    "alt": "Anker Ergonomic Optical",
+    "brand": "Anker",
+    "name": "Anker Ergonomic Optical",
+    "price": "$24.99"
+  },
+  {
+    "index": 44,
+    "cat": "mouse",
+    "id": "prod-microsoft-surface",
+    "src": "images/products/prod-microsoft-surface.jpg",
+    "alt": "Microsoft Surface Precision Mouse",
+    "brand": "Microsoft",
+    "name": "Microsoft Surface Precision Mouse",
+    "price": "$89.99"
+  },
+  {
+    "index": 45,
+    "cat": "mouse",
+    "id": "prod-apple-magic",
+    "src": "images/products/prod-apple-magic.jpg",
+    "alt": "Apple Magic Mouse",
+    "brand": "Apple",
+    "name": "Apple Magic Mouse",
+    "price": "$79.99"
+  },
+  {
+    "index": 46,
+    "cat": "mouse",
+    "id": "prod-corsair-darkcore",
+    "src": "images/products/prod-corsair-darkcore.jpg",
+    "alt": "Corsair Dark Core RGB Pro",
+    "brand": "Corsair",
+    "name": "Corsair Dark Core RGB Pro",
+    "price": "$89.99"
+  },
+  {
+    "index": 47,
+    "cat": "mouse",
+    "id": "prod-steelseries-aerox",
+    "src": "images/products/prod-steelseries-aerox.jpg",
+    "alt": "SteelSeries Aerox 3 Wireless",
+    "brand": "SteelSeries",
+    "name": "SteelSeries Aerox 3 Wireless",
+    "price": "$99.99"
+  },
+  {
+    "index": 48,
+    "cat": "mouse",
+    "id": "prod-hp-spectre700",
+    "src": "images/products/prod-hp-spectre700.jpg",
+    "alt": "HP Spectre Rechargeable Mouse 700",
+    "brand": "HP",
+    "name": "HP Spectre Rechargeable Mouse 700",
+    "price": "$59.99"
+  },
+  {
+    "index": 49,
+    "cat": "mouse",
+    "id": "prod-dell-ms7421w",
+    "src": "images/products/prod-dell-ms7421w.jpg",
+    "alt": "Dell Premier Rechargeable MS7421W",
+    "brand": "Dell",
+    "name": "Dell Premier Rechargeable (MS7421W)",
+    "price": "$69.99"
+  },
+  {
+    "index": 50,
+    "cat": "mouse",
+    "id": "prod-lenovo-go",
+    "src": "images/products/prod-lenovo-go.jpg",
+    "alt": "Lenovo Go Wireless Multi-Device",
+    "brand": "Lenovo",
+    "name": "Lenovo Go Wireless Multi-Device",
+    "price": "$49.99"
+  },
+  {
+    "index": 51,
+    "cat": "router",
+    "id": "prod-netgear-ax5400",
+    "src": "images/products/prod-netgear-ax5400.jpg",
+    "alt": "Netgear Nighthawk AX5400 WiFi 6",
+    "brand": "Netgear",
+    "name": "Netgear Nighthawk AX5400 WiFi 6",
+    "price": "$199.99"
+  },
+  {
+    "index": 52,
+    "cat": "router",
+    "id": "prod-tplink-ax55",
+    "src": "images/products/prod-tplink-ax55.jpg",
+    "alt": "TP-Link Archer AX55 Smart WiFi 6",
+    "brand": "TP-Link",
+    "name": "TP-Link Archer AX55 Smart WiFi 6",
+    "price": "$119.99"
+  },
+  {
+    "index": 53,
+    "cat": "router",
+    "id": "prod-asus-ax88u",
+    "src": "images/products/prod-asus-ax88u.jpg",
+    "alt": "ASUS RT-AX88U Pro Dual-Band",
+    "brand": "ASUS",
+    "name": "ASUS RT-AX88U Pro Dual-Band",
+    "price": "$249.99"
+  },
+  {
+    "index": 54,
+    "cat": "router",
+    "id": "prod-linksys-hydra",
+    "src": "images/products/prod-linksys-hydra.jpg",
+    "alt": "Linksys Hydra Pro 6",
+    "brand": "Linksys",
+    "name": "Linksys Hydra Pro 6",
+    "price": "$149.99"
+  },
+  {
+    "index": 55,
+    "cat": "router",
+    "id": "prod-eero-pro6e",
+    "src": "images/products/prod-eero-pro6e.jpg",
+    "alt": "Eero Pro 6E Mesh Router",
+    "brand": "Amazon Eero",
+    "name": "Eero Pro 6E Mesh Router",
+    "price": "$299.99"
+  },
+  {
+    "index": 56,
+    "cat": "router",
+    "id": "prod-google-nest-wifi",
+    "src": "images/products/prod-google-nest-wifi.jpg",
+    "alt": "Google Nest WiFi Pro",
+    "brand": "Google",
+    "name": "Google Nest WiFi Pro",
+    "price": "$199.99"
+  },
+  {
+    "index": 57,
+    "cat": "router",
+    "id": "prod-amplifi-alien",
+    "src": "images/products/prod-amplifi-alien.jpg",
+    "alt": "AmpliFi Alien WiFi 6",
+    "brand": "AmpliFi",
+    "name": "AmpliFi Alien WiFi 6",
+    "price": "$379.99"
+  },
+  {
+    "index": 58,
+    "cat": "router",
+    "id": "prod-synology-rt6600",
+    "src": "images/products/prod-synology-rt6600.jpg",
+    "alt": "Synology RT6600ax",
+    "brand": "Synology",
+    "name": "Synology RT6600ax",
+    "price": "$299.99"
+  },
+  {
+    "index": 59,
+    "cat": "router",
+    "id": "prod-dlink-ax5400",
+    "src": "images/products/prod-dlink-ax5400.jpg",
+    "alt": "D-Link EXO AX5400",
+    "brand": "D-Link",
+    "name": "D-Link EXO AX5400",
+    "price": "$179.99"
+  },
+  {
+    "index": 60,
+    "cat": "router",
+    "id": "prod-reyee-e5",
+    "src": "images/products/prod-reyee-e5.jpg",
+    "alt": "Reyee RG-E5 WiFi 6 Router",
+    "brand": "Reyee",
+    "name": "Reyee RG-E5 WiFi 6 Router",
+    "price": "$129.99"
+  }
+]

@@ -1,13 +1,14 @@
 /* ============================================================
    SmartCable – Footer Styles (css/footer.css)
+   Futuristic Cyber-Tech Theme
    ============================================================ */
 
 .footer {
-  background: var(--gradient-dark);
-  color: var(--color-white);
+  background: var(--color-surface);
+  color: var(--color-text-main);
   padding-top: var(--space-4xl);
   padding-bottom: var(--space-2xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-card);
 }
 
 .footer__grid {
@@ -45,13 +46,14 @@
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
-  color: var(--color-white);
+  color: var(--color-text-main);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .footer__brand-text span {
   color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
 }
 
 .footer__brand-services {
@@ -88,8 +90,8 @@
 }
 
 .footer__contact-line a:hover {
-  color: var(--color-primary-light);
-  text-decoration: underline;
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
 }
 
 /* Social Icons */
@@ -106,16 +108,18 @@
   width: 38px;
   height: 38px;
   border-radius: var(--border-radius-full);
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--color-white);
+  background-color: rgba(0, 242, 254, 0.06);
+  border: 1px solid var(--border-card);
+  color: var(--color-text-muted);
   transition: all var(--transition-base);
 }
 
 .footer__social-link:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: rgba(0, 242, 254, 0.15);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 242, 254, 0.3);
 }
 
 /* Column Link Lists */
@@ -138,7 +142,7 @@
   left: 0;
   width: 24px;
   height: 2px;
-  background-color: var(--color-primary);
+  background: var(--gradient-neon);
 }
 
 .footer__links {
@@ -149,19 +153,19 @@
 
 .footer__link {
   font-size: var(--fs-sm);
-  color: var(--color-gray-300);
+  color: var(--color-text-muted);
   transition: all var(--transition-fast);
   width: fit-content;
 }
 
 .footer__link:hover {
-  color: var(--color-white);
+  color: var(--color-primary);
   transform: translateX(4px);
 }
 
 /* Footer Bottom Bar */
 .footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-card);
   padding-top: var(--space-xl);
   display: flex;
   flex-direction: column;
@@ -197,5 +201,5 @@
 }
 
 .footer__bottom-link:hover {
-  color: var(--color-white);
+  color: var(--color-primary);
 }
