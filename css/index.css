@@ -3,6 +3,11 @@
    Futuristic Cyber-Tech Theme + Product Catalog
    ============================================================ */
 
+:root {
+  /* 🎛️ HERO BACKGROUND OPACITY: Adjust between 0.0 (invisible) and 1.0 (fully opaque) */
+  --hero-bg-opacity: 0.95;
+}
+
 /* ── Hero Section ── */
 .hero {
   position: relative;
@@ -49,7 +54,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  opacity: 0.65;
+  opacity: var(--hero-bg-opacity, 0.95);
 }
 
 .hero__bg-desktop {
@@ -66,7 +71,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.95;
+    opacity: var(--hero-bg-opacity, 0.95);
   }
 }
 
